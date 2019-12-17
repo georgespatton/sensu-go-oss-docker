@@ -14,4 +14,4 @@ Builds a sensu-go Docker container using only the OSS, non-enterprise components
 `$ sudo docker run -d <new_image> sensu-agent start`
 
 #### To view stdout logs:
-`sudo docker logs <new_container_hash>`
+`$ sudo docker logs <new_container_hash>`
