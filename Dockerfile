@@ -10,7 +10,6 @@ RUN apt-get update -q && \
 
 RUN cd sensu-go && \
     mkdir ../bin && \
-    cp docker-scripts/sensu-entrypoint.sh ../bin/ && \
     go build -ldflags "-X "github.com/sensu/sensu-go/version.Version=${git_tag}" -X "github.com/sensu/sensu-go/version.BuildDate=$(date +"%y-%m-%d")" -X "github.com/sensu/sensu-go/version.BuildSHA=$(git rev-parse HEAD)"" -o ../bin/sensu-agent ./cmd/sensu-agent && \
     go build -ldflags "-X "github.com/sensu/sensu-go/version.Version=${git_tag}" -X "github.com/sensu/sensu-go/version.BuildDate=$(date +"%y-%m-%d")" -X "github.com/sensu/sensu-go/version.BuildSHA=$(git rev-parse HEAD)"" -o ../bin/sensu-backend ./cmd/sensu-backend && \
     go build -ldflags "-X "github.com/sensu/sensu-go/version.Version=${git_tag}" -X "github.com/sensu/sensu-go/version.BuildDate=$(date +"%y-%m-%d")" -X "github.com/sensu/sensu-go/version.BuildSHA=$(git rev-parse HEAD)"" -o ../bin/sensuctl ./cmd/sensuctl
